@@ -2,6 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+   font-family: "Jony";
+   src: url("https://static.tildacdn.com/tild3037-6639-4630-b238-353839363661/golca.woff") format("woff");
+   font-weight: 300;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: "Jony";
+   src: url("https://static.tildacdn.com/tild3066-3565-4438-a262-346661343538/bookantiqua.woff") format("woff");
+   font-weight: 600;
+   font-style: normal;
+}
+
+body {
+   font-family: "Jony", Helvetica, sans-serif;
+   font-weight: 600;
+}
+
 .custom-container {
    @apply max-w-[500px] w-full m-auto;
 }
