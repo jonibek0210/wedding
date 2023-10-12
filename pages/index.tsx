@@ -11,6 +11,8 @@ import { motion } from "framer-motion";
 import { AiOutlineHeart } from "react-icons/ai";
 
 import { Inter } from "next/font/google";
+import Calendar from "@/components/Сalendar";
+import Counter from "@/components/Counter";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
@@ -24,42 +26,8 @@ export default function Home() {
 
             <section>
                <div className="custom-container px-5 overflow-hidden">
-                  <div className="flex justify-center mt-10">
-                     <div className="max-w-xs w-full h-32 relative">
-                        <motion.img
-                           initial={{ scale: 0.9, opacity: 0 }}
-                           whileInView={{ scale: 1, opacity: 1 }}
-                           transition={{
-                              delay: 0,
-                              ease: "easeOut",
-                              duration: 1,
-                           }}
-                           className="absolute -top-24"
-                           src="https://thumb.tildacdn.com/tild3862-3034-4631-a430-353366643331/-/resize/444x/-/format/webp/photo.png"
-                           alt="text"
-                        />
-                     </div>
-                  </div>
-                  <div className="flex justify-center mt-5">
-                     <div className="max-w-xs w-full">
-                        <motion.p
-                           initial={{ scale: 0.9, opacity: 0 }}
-                           whileInView={{ scale: 1, opacity: 1 }}
-                           transition={{
-                              delay: 0.3,
-                              ease: "easeOut",
-                              duration: 1,
-                           }}
-                           className="text-[18px] text-center"
-                        >
-                           В нашей жизни произойдет очень важное событие – наша
-                           свадьба! Мы верим и надеемся, что этот день станет
-                           красивым началом долгой и счастливой жизни.
-                        </motion.p>
-                     </div>
-                  </div>
-                  <div className="flex justify-center mt-10">
-                     <motion.div
+                  <div className="mt-10">
+                     <motion.h2
                         initial={{ scale: 0.9, opacity: 0 }}
                         whileInView={{ scale: 1, opacity: 1 }}
                         transition={{
@@ -67,14 +35,40 @@ export default function Home() {
                            ease: "easeOut",
                            duration: 1,
                         }}
-                        className="max-w-xs w-full h-32 relative"
+                        className="text-7xl font-[champignon] font-normal leading-[0.8] text-center"
                      >
-                        <img
-                           className="absolute -top-10 left-1/2 -translate-x-1/2"
-                           src="https://thumb.tildacdn.com/tild3766-6162-4463-b161-353131623932/-/resize/240x/-/format/webp/photo.png"
-                           alt="text"
-                        />
-                     </motion.div>
+                        Дорогие <br /> родные и друзья!
+                     </motion.h2>
+                  </div>
+                  <div className="w-full">
+                     <motion.p
+                        initial={{ scale: 0.9, opacity: 0 }}
+                        whileInView={{ scale: 1, opacity: 1 }}
+                        transition={{
+                           delay: 0.3,
+                           ease: "easeOut",
+                           duration: 1,
+                        }}
+                        className="text-[18px] text-center mt-5"
+                     >
+                        В нашей жизни произойдет очень важное событие – наша
+                        свадьба! Мы верим и надеемся, что этот день станет
+                        красивым началом долгой и счастливой жизни.
+                     </motion.p>
+                  </div>
+                  <div className="mt-10">
+                     <motion.h2
+                        initial={{ scale: 0.9, opacity: 0 }}
+                        whileInView={{ scale: 1, opacity: 1 }}
+                        transition={{
+                           delay: 0,
+                           ease: "easeOut",
+                           duration: 1,
+                        }}
+                        className="text-7xl font-[champignon] font-normal leading-[0.8] text-center"
+                     >
+                        Ждем вас
+                     </motion.h2>
                   </div>
                   <div className="mb-10">
                      <motion.p
@@ -82,10 +76,10 @@ export default function Home() {
                         whileInView={{ scale: 1, opacity: 1 }}
                         transition={{
                            delay: 0,
-                           ease: "easeOut",
+                           ease: "easeIn",
                            duration: 1,
                         }}
-                        className="text-center"
+                        className="text-center mt-5"
                      >
                         11 2023 года
                      </motion.p>
@@ -108,45 +102,26 @@ export default function Home() {
             </section>
 
             <section>
-               <div className="">
-                  <div className="flex justify-center mt-2">
-                     <div className="max-w-xl w-full relative">
-                        <motion.img
-                           initial={{ scale: 0.9, opacity: 0 }}
-                           whileInView={{ scale: 1, opacity: 1 }}
-                           transition={{
-                              delay: 0,
-                              ease: "easeOut",
-                              duration: 1,
-                           }}
-                           className=""
-                           src="https://static.tildacdn.com/tild3430-3964-4537-a564-353064393734/_.png"
-                           alt="text"
-                        />
-                     </div>
-                  </div>
-               </div>
+               <Calendar />
             </section>
 
             <section>
-               <div className="">
-                  <div className="flex justify-center mt-10">
-                     <div className="max-w-xs w-full h-32 relative">
-                        <motion.img
-                           initial={{ scale: 0.9, opacity: 0 }}
-                           whileInView={{ scale: 1, opacity: 1 }}
-                           transition={{
-                              delay: 0,
-                              ease: "easeOut",
-                              duration: 1,
-                           }}
-                           className="absolute -top-24"
-                           src="https://thumb.tildacdn.com/tild3761-6636-4732-a637-303161363163/-/resize/304x/-/format/webp/photo.png"
-                           alt="text"
-                        />
-                     </div>
+               <div className="custom-container px-5">
+                  <div className="flex justify-center">
+                     <motion.h2
+                        className="text-7xl font-[champignon] font-normal leading-[0.8] text-center mt-14"
+                        initial={{ scale: 0.9, opacity: 0 }}
+                        whileInView={{ scale: 1, opacity: 1 }}
+                        transition={{
+                           delay: 0,
+                           ease: "easeOut",
+                           duration: 1,
+                        }}
+                     >
+                        Место проведение
+                     </motion.h2>
                   </div>
-                  <div className="mt-10">
+                  <div className="mt-5">
                      <motion.p
                         initial={{ scale: 0.9, opacity: 0 }}
                         whileInView={{ scale: 1, opacity: 1 }}
@@ -197,8 +172,9 @@ export default function Home() {
 
             <section>
                <div className="custom-container px-5">
-                  <div className="flex justify-center mt-10">
-                     <motion.div
+                  <div className="">
+                     <motion.h2
+                        className="text-7xl font-[champignon] font-normal leading-[0.8] text-center mt-14"
                         initial={{ scale: 0.9, opacity: 0 }}
                         whileInView={{ scale: 1, opacity: 1 }}
                         transition={{
@@ -206,16 +182,12 @@ export default function Home() {
                            ease: "easeOut",
                            duration: 1,
                         }}
-                        className="max-w-xs w-full h-32 relative"
                      >
-                        <img
-                           className="absolute -top-10 left-1/2 -translate-x-1/2"
-                           src="https://thumb.tildacdn.com/tild6237-3864-4434-b439-633137323434/-/resize/638x/-/format/webp/photo.png"
-                           alt="text"
-                        />
-                     </motion.div>
+                        План дня
+                     </motion.h2>
                   </div>
-                  <div className="flex flex-col gap-5 mt-16 relative">
+
+                  <div className="flex flex-col gap-5 mt-5 relative">
                      <motion.div
                         initial={{ height: "30%" }}
                         whileInView={{ height: "80%" }}
@@ -361,8 +333,9 @@ export default function Home() {
 
             <section>
                <div className="custom-container px-5">
-                  <div className="flex justify-center mt-10">
-                     <motion.div
+                  <div className="mt-10">
+                     <motion.h2
+                        className="text-7xl font-[champignon] font-normal leading-[0.8] text-center mt-14"
                         initial={{ scale: 0.9, opacity: 0 }}
                         whileInView={{ scale: 1, opacity: 1 }}
                         transition={{
@@ -370,32 +343,25 @@ export default function Home() {
                            ease: "easeOut",
                            duration: 1,
                         }}
-                        className="max-w-xs w-full h-32 relative"
                      >
-                        <img
-                           className="absolute -top-10 left-1/2 -translate-x-1/2"
-                           src="https://thumb.tildacdn.com/tild3030-3264-4963-b563-623835333332/-/resize/670x/-/format/webp/photo.png"
-                           alt="text"
-                        />
-                     </motion.div>
+                        Дресс-код
+                     </motion.h2>
                   </div>
                   <div className="">
-                     <div className="flex justify-center mt-5">
-                        <div className="max-w-[240px] w-full mt-10">
-                           <motion.p
-                              initial={{ scale: 0.8, opacity: 0 }}
-                              whileInView={{ scale: 1, opacity: 1 }}
-                              transition={{
-                                 delay: 0,
-                                 ease: "easeOut",
-                                 duration: 1,
-                              }}
-                              className="text-[20px] leading-[31px] text-center"
-                           >
-                              Будем очень благодарны, если Вы подберете наряды в
-                              цветах нашей свадьбы
-                           </motion.p>
-                        </div>
+                     <div className="w-full mt-5">
+                        <motion.p
+                           initial={{ scale: 0.8, opacity: 0 }}
+                           whileInView={{ scale: 1, opacity: 1 }}
+                           transition={{
+                              delay: 0,
+                              ease: "easeOut",
+                              duration: 1,
+                           }}
+                           className="text-[20px] leading-[31px] text-center"
+                        >
+                           Будем очень благодарны, если Вы подберете наряды в
+                           цветах нашей свадьбы
+                        </motion.p>
                      </div>
                   </div>
                   <div className="flex justify-center gap-4 py-2 px-4 my-10 border border-black rounded-full">
@@ -450,8 +416,22 @@ export default function Home() {
                         className="w-12 h-12 rounded-full bg-[#d5e2eb]"
                      ></motion.div>
                   </div>
-                  <div className="flex justify-center">
-                     <motion.div
+                  <div className="">
+                     <motion.h2
+                        className="text-7xl font-[champignon] font-normal leading-[0.8] text-center mt-14"
+                        initial={{ scale: 0.9, opacity: 0 }}
+                        whileInView={{ scale: 1, opacity: 1 }}
+                        transition={{
+                           delay: 0,
+                           ease: "easeOut",
+                           duration: 1,
+                        }}
+                     >
+                        Подсказки
+                     </motion.h2>
+                  </div>
+                  <div className="mt-5">
+                     <motion.p
                         initial={{ scale: 0.8, opacity: 0 }}
                         whileInView={{ scale: 1, opacity: 1 }}
                         transition={{
@@ -459,52 +439,30 @@ export default function Home() {
                            ease: "easeOut",
                            duration: 1,
                         }}
-                        className="max-w-xs w-full h-32 relative"
+                        className="text-[20px] leading-[31px] text-center"
                      >
-                        <img
-                           className="absolute -top-24 left-1/2 -translate-x-1/2"
-                           src="https://thumb.tildacdn.com/tild6338-3335-4635-a661-646364313665/-/resize/670x/-/format/webp/photo.png"
-                           alt="text"
-                        />
-                     </motion.div>
-                  </div>
-                  <div className="flex justify-center">
-                     <div className="max-w-[280px] w-full">
-                        <motion.p
-                           initial={{ scale: 0.8, opacity: 0 }}
-                           whileInView={{ scale: 1, opacity: 1 }}
-                           transition={{
-                              delay: 0,
-                              ease: "easeOut",
-                              duration: 1,
-                           }}
-                           className="text-[20px] leading-[31px] text-center"
-                        >
-                           Наш праздник для взрослых, так как мы не предполагаем
-                           развлечений и посадочных мест для детей.
-                        </motion.p>
-                     </div>
+                        Наш праздник для взрослых, так как мы не предполагаем
+                        развлечений и посадочных мест для детей.
+                     </motion.p>
                   </div>
                   <div className="flex justify-center mt-5">
                      <AiOutlineHeart size={40} color={"gray"} />
                   </div>
                   <div className="flex justify-center mt-5">
-                     <div className="max-w-[280px] w-full">
-                        <motion.p
-                           initial={{ scale: 0.8, opacity: 0 }}
-                           whileInView={{ scale: 1, opacity: 1 }}
-                           transition={{
-                              delay: 0,
-                              ease: "easeOut",
-                              duration: 1,
-                           }}
-                           className="text-[20px] leading-[31px] text-center"
-                        >
-                           Просим вас не дарить нам цветы - мы не успеем
-                           насладиться их красотой до отъезда. А вот бутылочке
-                           вина для нашей семейной винотеки будем очень рады!
-                        </motion.p>
-                     </div>
+                     <motion.p
+                        initial={{ scale: 0.8, opacity: 0 }}
+                        whileInView={{ scale: 1, opacity: 1 }}
+                        transition={{
+                           delay: 0,
+                           ease: "easeOut",
+                           duration: 1,
+                        }}
+                        className="text-[20px] leading-[31px] text-center"
+                     >
+                        Просим вас не дарить нам цветы - мы не успеем
+                        насладиться их красотой до отъезда. А вот бутылочке вина
+                        для нашей семейной винотеки будем очень рады!
+                     </motion.p>
                   </div>
                   <div className="flex justify-center mt-5">
                      <AiOutlineHeart size={40} color={"gray"} />
@@ -530,99 +488,7 @@ export default function Home() {
             </section>
 
             <section className="bg-[#ececec] overflow-hidden mt-5">
-               <div className="custom-container">
-                  <div className="relative mb-10 px-5">
-                     <motion.h2
-                        initial={{ scale: 0.9, opacity: 0 }}
-                        whileInView={{ scale: 1, opacity: 1 }}
-                        transition={{
-                           delay: 0,
-                           ease: "easeOut",
-                           duration: 1,
-                        }}
-                        className="text-[50px] text-center relative z-10"
-                     >
-                        ЖДЕМ ВАС
-                     </motion.h2>
-                     <div className="w-64 absolute -top-16 -right-7 ">
-                        <img
-                           className="invert-[.60]"
-                           src="https://thumb.tildacdn.com/tild3734-6337-4036-b765-396366386536/-/resize/718x/-/format/webp/photo.png"
-                           alt="text"
-                        />
-                     </div>
-                  </div>
-                  <div className="flex justify-center gap-5 pt-20 pb-10 border-t border-gray-300">
-                     <motion.div
-                        initial={{ y: 40, opacity: 0 }}
-                        whileInView={{ y: 0, opacity: 1 }}
-                        transition={{
-                           delay: 0,
-                           ease: "easeOut",
-                           duration: 1,
-                        }}
-                        className="flex flex-col items-center"
-                     >
-                        <div className="">
-                           <span className="text-[30px] leading-5">00</span>
-                        </div>
-                        <div className="">
-                           <span className="text-xs">Дней</span>
-                        </div>
-                     </motion.div>
-                     <motion.div
-                        initial={{ y: 40, opacity: 0 }}
-                        whileInView={{ y: 0, opacity: 1 }}
-                        transition={{
-                           delay: 0.1,
-                           ease: "easeOut",
-                           duration: 1,
-                        }}
-                        className="flex flex-col items-center"
-                     >
-                        <div className="">
-                           <span className="text-[30px] leading-5">00</span>
-                        </div>
-                        <div className="">
-                           <span className="text-xs">Часов</span>
-                        </div>
-                     </motion.div>
-                     <motion.div
-                        initial={{ y: 40, opacity: 0 }}
-                        whileInView={{ y: 0, opacity: 1 }}
-                        transition={{
-                           delay: 0.2,
-                           ease: "easeOut",
-                           duration: 1,
-                        }}
-                        className="flex flex-col items-center"
-                     >
-                        <div className="">
-                           <span className="text-[30px] leading-5">00</span>
-                        </div>
-                        <div className="">
-                           <span className="text-xs">Минут</span>
-                        </div>
-                     </motion.div>
-                     <motion.div
-                        initial={{ y: 40, opacity: 0 }}
-                        whileInView={{ y: 0, opacity: 1 }}
-                        transition={{
-                           delay: 0.3,
-                           ease: "easeOut",
-                           duration: 1,
-                        }}
-                        className="flex flex-col items-center"
-                     >
-                        <div className="">
-                           <span className="text-[30px] leading-5">00</span>
-                        </div>
-                        <div className="">
-                           <span className="text-xs">Секунд</span>
-                        </div>
-                     </motion.div>
-                  </div>
-               </div>
+               <Counter />
             </section>
 
             <section>
@@ -932,7 +798,7 @@ export default function Home() {
                      </div>
                      <div className="flex justify-center mt-7">
                         <motion.button
-                           initial={{ y: 40, opacity: 0 }}
+                           initial={{ y: -40, opacity: 0 }}
                            whileInView={{ y: 0, opacity: 1 }}
                            transition={{
                               delay: 0,
@@ -950,8 +816,9 @@ export default function Home() {
 
             <section>
                <div className="custom-container">
-                  <div className="flex justify-center">
-                     <motion.div
+                  <div className="">
+                     <motion.h2
+                        className="text-7xl font-[champignon] font-normal leading-[0.8] text-center mt-14"
                         initial={{ scale: 0.9, opacity: 0 }}
                         whileInView={{ scale: 1, opacity: 1 }}
                         transition={{
@@ -959,16 +826,11 @@ export default function Home() {
                            ease: "easeOut",
                            duration: 1,
                         }}
-                        className="max-w-xs w-full h-32 relative"
                      >
-                        <img
-                           className="absolute -top-24 left-1/2 -translate-x-1/2"
-                           src="https://static.tildacdn.com/tild6462-6561-4464-a661-323132306131/photo.png"
-                           alt="text"
-                        />
-                     </motion.div>
+                        Контакты
+                     </motion.h2>
                   </div>
-                  <div className="flex flex-col items-center">
+                  <div className="flex flex-col items-center mt-5">
                      <motion.p
                         initial={{ scale: 0.9, opacity: 0 }}
                         whileInView={{ scale: 1, opacity: 1 }}
@@ -1036,8 +898,9 @@ export default function Home() {
                      </motion.p>
                      <AiOutlineHeart size={40} className="heart-animate my-5" />
                   </div>
-                  <div className="flex justify-center">
-                     <motion.div
+                  <div className="">
+                     <motion.h2
+                        className="text-7xl font-[champignon] font-normal leading-[1] text-center mt-5"
                         initial={{ scale: 0.9, opacity: 0 }}
                         whileInView={{ scale: 1, opacity: 1 }}
                         transition={{
@@ -1045,14 +908,10 @@ export default function Home() {
                            ease: "easeOut",
                            duration: 1,
                         }}
-                        className="max-w-xs w-full h-32 relative"
                      >
-                        <img
-                           className="absolute -top-24 left-1/2 -translate-x-1/2"
-                           src="https://thumb.tildacdn.com/tild6265-6465-4230-a239-323932333936/-/resize/435x/-/format/webp/_.png"
-                           alt="text"
-                        />
-                     </motion.div>
+                        Shakhzod
+                        <br /> & <br /> Sabina
+                     </motion.h2>
                   </div>
                </div>
             </section>

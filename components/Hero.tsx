@@ -53,13 +53,11 @@ const Hero: React.FC<HeroProps> = () => {
                transition={{ delay: 0.6, ease: "easeOut", duration: 1.5 }}
                className=""
             >
-               <p className="text-[48px] leading-10">Дмитрий</p>
-               <img
-                  className="w-20"
-                  src="https://thumb.tildacdn.com/tild6139-3134-4430-a536-363535613537/-/resize/124x/-/format/webp/and.png"
-                  alt="and"
-               />
-               <p className="text-[48px] leading-8">Ольга</p>
+               <h1 className="text-[48px] leading-10">Shakhzod</h1>
+               <h2 className="text-7xl font-[champignon] font-normal leading-[0.8] ">
+                  and
+               </h2>
+               <h1 className="text-[48px] leading-8">Sabina</h1>
             </motion.div>
          </div>
       </div>
