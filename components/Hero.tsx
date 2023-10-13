@@ -30,10 +30,10 @@ const Hero: React.FC<HeroProps> = () => {
                initial={{ x: 50, opacity: 0 }}
                whileInView={{ x: 0, opacity: 1 }}
                transition={{ delay: 0, ease: "easeOut", duration: 1.5 }}
-               className="max-w-[250px] w-full min-h-[200px]"
+               className="max-w-[250px] w-full min-h-[300px]"
             >
                <Image
-                  className="min-h-[200px] w-full"
+                  className="min-h-[300px] w-full"
                   src={"/images/love-history.jpg"}
                   width={1000}
                   height={1000}
