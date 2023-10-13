@@ -1,6 +1,6 @@
 "use client";
 /* eslint-disable @next/next/no-img-element */
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 
 import Header from "@/components/Header";
@@ -15,10 +15,23 @@ import { motion } from "framer-motion";
 import { AiOutlineHeart } from "react-icons/ai";
 
 import { Inter } from "next/font/google";
+import PlanDay from "@/components/PlanDay";
+import Form from "@/components/Form";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
    const [hide, setHide] = useState(true);
+
+   useEffect(() => {
+      window.addEventListener("load", () => {
+         setHide(false);
+      });
+      const timeout = setTimeout(() => {
+         setHide(false);
+      }, 5000);
+
+      return () => clearTimeout(timeout);
+   }, []);
 
    return (
       <>
@@ -183,229 +196,7 @@ export default function Home() {
                   </section>
 
                   <section>
-                     <div className="custom-container px-5">
-                        <div className="">
-                           <motion.h2
-                              className="text-7xl font-[champignon] font-normal leading-[0.8] text-center mt-14"
-                              initial={{ scale: 0.9, opacity: 0 }}
-                              whileInView={{ scale: 1, opacity: 1 }}
-                              transition={{
-                                 delay: 0,
-                                 ease: "easeOut",
-                                 duration: 1,
-                              }}
-                           >
-                              План дня
-                           </motion.h2>
-                        </div>
-
-                        <div className="flex flex-col gap-5 mt-5 relative">
-                           <motion.div
-                              initial={{ height: "30%" }}
-                              whileInView={{ height: "80%" }}
-                              transition={{
-                                 delay: 0,
-                                 ease: "easeOut",
-                                 duration: 2,
-                              }}
-                              className="w-[1px] h-[20%] absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 bg-black"
-                           ></motion.div>
-
-                           <div className="flex items-center justify-around relative">
-                              <motion.div
-                                 initial={{
-                                    y: 5,
-                                    x: -50,
-                                    scale: 1,
-                                    opacity: 1,
-                                 }}
-                                 whileInView={{
-                                    y: 0,
-                                    x: 0,
-                                    scale: 1,
-                                    opacity: 1,
-                                 }}
-                                 transition={{
-                                    delay: 0,
-                                    ease: "easeOut",
-                                    duration: 1,
-                                 }}
-                                 className="w-28"
-                              >
-                                 <img
-                                    src="https://thumb.tildacdn.com/tild3632-6165-4436-b139-653665326435/-/resize/224x/-/format/webp/1.png"
-                                    alt=""
-                                 />
-                              </motion.div>
-                              <div className="w-[12px] h-[12px] rounded-full absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 bg-black"></div>
-                              <motion.div
-                                 initial={{
-                                    y: 5,
-                                    x: 50,
-                                    scale: 0.9,
-                                    opacity: 0,
-                                 }}
-                                 whileInView={{
-                                    y: 0,
-                                    x: 0,
-                                    scale: 1,
-                                    opacity: 1,
-                                 }}
-                                 transition={{
-                                    delay: 0,
-                                    ease: "easeOut",
-                                    duration: 1,
-                                 }}
-                                 className=""
-                              >
-                                 <p className="text-[20px]">
-                                    15:20 <br /> Регистрация
-                                 </p>
-                              </motion.div>
-                           </div>
-                           <div className="flex items-center justify-around relative">
-                              <motion.div
-                                 initial={{
-                                    y: 5,
-                                    x: -50,
-                                    scale: 1,
-                                    opacity: 1,
-                                 }}
-                                 whileInView={{
-                                    y: 0,
-                                    x: 0,
-                                    scale: 1,
-                                    opacity: 1,
-                                 }}
-                                 transition={{
-                                    delay: 0,
-                                    ease: "easeOut",
-                                    duration: 1,
-                                 }}
-                                 className="w-28"
-                              >
-                                 <img
-                                    src="https://thumb.tildacdn.com/tild3632-6165-4436-b139-653665326435/-/resize/224x/-/format/webp/1.png"
-                                    alt=""
-                                 />
-                              </motion.div>
-                              <div className="w-[12px] h-[12px] rounded-full absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 bg-black"></div>
-                              <motion.div
-                                 initial={{ y: 5, x: 50, scale: 1, opacity: 1 }}
-                                 whileInView={{
-                                    y: 0,
-                                    x: 0,
-                                    scale: 1,
-                                    opacity: 1,
-                                 }}
-                                 transition={{
-                                    delay: 0,
-                                    ease: "easeOut",
-                                    duration: 1,
-                                 }}
-                                 className=""
-                              >
-                                 <p className="text-[20px]">
-                                    15:20 <br /> Регистрация
-                                 </p>
-                              </motion.div>
-                           </div>
-                           <div className="flex items-center justify-around relative">
-                              <motion.div
-                                 initial={{
-                                    y: 5,
-                                    x: -50,
-                                    scale: 1,
-                                    opacity: 1,
-                                 }}
-                                 whileInView={{
-                                    y: 0,
-                                    x: 0,
-                                    scale: 1,
-                                    opacity: 1,
-                                 }}
-                                 transition={{
-                                    delay: 0,
-                                    ease: "easeOut",
-                                    duration: 1,
-                                 }}
-                                 className="w-28"
-                              >
-                                 <img
-                                    src="https://thumb.tildacdn.com/tild3632-6165-4436-b139-653665326435/-/resize/224x/-/format/webp/1.png"
-                                    alt=""
-                                 />
-                              </motion.div>
-                              <div className="w-[12px] h-[12px] rounded-full absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 bg-black"></div>
-                              <motion.div
-                                 initial={{ y: 5, x: 50, scale: 1, opacity: 1 }}
-                                 whileInView={{
-                                    y: 0,
-                                    x: 0,
-                                    scale: 1,
-                                    opacity: 1,
-                                 }}
-                                 transition={{
-                                    delay: 0,
-                                    ease: "easeOut",
-                                    duration: 1,
-                                 }}
-                                 className=""
-                              >
-                                 <p className="text-[20px]">
-                                    15:20 <br /> Регистрация
-                                 </p>
-                              </motion.div>
-                           </div>
-                           <div className="flex items-center justify-around relative">
-                              <motion.div
-                                 initial={{
-                                    y: 5,
-                                    x: -50,
-                                    scale: 1,
-                                    opacity: 1,
-                                 }}
-                                 whileInView={{
-                                    y: 0,
-                                    x: 0,
-                                    scale: 1,
-                                    opacity: 1,
-                                 }}
-                                 transition={{
-                                    delay: 0,
-                                    ease: "easeOut",
-                                    duration: 1,
-                                 }}
-                                 className="w-28"
-                              >
-                                 <img
-                                    src="https://thumb.tildacdn.com/tild3632-6165-4436-b139-653665326435/-/resize/224x/-/format/webp/1.png"
-                                    alt=""
-                                 />
-                              </motion.div>
-                              <div className="w-[12px] h-[12px] rounded-full absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 bg-black"></div>
-                              <motion.div
-                                 initial={{ y: 5, x: 50, scale: 1, opacity: 1 }}
-                                 whileInView={{
-                                    y: 0,
-                                    x: 0,
-                                    scale: 1,
-                                    opacity: 1,
-                                 }}
-                                 transition={{
-                                    delay: 0,
-                                    ease: "easeOut",
-                                    duration: 1,
-                                 }}
-                                 className=""
-                              >
-                                 <p className="text-[20px]">
-                                    15:20 <br /> Регистрация
-                                 </p>
-                              </motion.div>
-                           </div>
-                        </div>
-                     </div>
+                     <PlanDay />
                   </section>
 
                   <section>
@@ -421,7 +212,11 @@ export default function Home() {
                                  duration: 1,
                               }}
                            >
-                              Дресс-код
+                              Дресс
+                              <span className="font-[Jony] relative top-3">
+                                 -
+                              </span>
+                              код
                            </motion.h2>
                         </div>
                         <div className="">
@@ -571,334 +366,7 @@ export default function Home() {
                   </section>
 
                   <section>
-                     <div className="custom-container px-10">
-                        <div className="flex justify-center mt-5">
-                           <div className="max-w-[300px] w-full">
-                              <motion.p
-                                 initial={{ scale: 0.9, opacity: 0 }}
-                                 whileInView={{ scale: 1, opacity: 1 }}
-                                 transition={{
-                                    delay: 0,
-                                    ease: "easeOut",
-                                    duration: 1,
-                                 }}
-                                 className="text-[18px] leading-[31px] text-center"
-                              >
-                                 Ответьте пожалуйста на несколько вопросов,
-                                 которые мы для Вас подготовили
-                              </motion.p>
-                           </div>
-                        </div>
-                        <div className="animate-bounce flex justify-center mt-5">
-                           <img
-                              className="w-5 -rotate-90"
-                              src="https://thumb.tildacdn.com/tild3831-6661-4164-a131-393166613730/-/format/webp/pngwingcom_15.png"
-                              alt="arrow"
-                           />
-                        </div>
-                        <motion.div
-                           initial={{ x: -40, opacity: 0 }}
-                           whileInView={{ x: 0, opacity: 1 }}
-                           transition={{
-                              delay: 0,
-                              ease: "easeOut",
-                              duration: 0.5,
-                           }}
-                           className=""
-                        >
-                           <p className="text-[18px] text-start mb-1">ФИО</p>
-                           <input
-                              type="text"
-                              placeholder="Напишите пожалуйста Ваши ФИО"
-                              className="w-full px-5 border border-black leading-[60px] placeholder:text-gray-400"
-                           />
-                        </motion.div>
-                        <form className="">
-                           <div className="">
-                              <motion.div
-                                 initial={{ x: -40, opacity: 0 }}
-                                 whileInView={{ x: 0, opacity: 1 }}
-                                 transition={{
-                                    delay: 0,
-                                    ease: "easeOut",
-                                    duration: 0.5,
-                                 }}
-                                 className=""
-                              >
-                                 <h2 className="text-[18px] mb-2 mt-7">
-                                    Сможете ли присутствовать на нашем
-                                    торжестве?
-                                 </h2>
-                              </motion.div>
-                              <div className="">
-                                 <ul className="flex flex-col gap-1">
-                                    <motion.li
-                                       initial={{ x: -40, opacity: 0 }}
-                                       whileInView={{ x: 0, opacity: 1 }}
-                                       transition={{
-                                          delay: 0.1,
-                                          ease: "easeOut",
-                                          duration: 0.5,
-                                       }}
-                                       className=""
-                                    >
-                                       <label className="flex items-center gap-4 cursor-pointer">
-                                          <input
-                                             className="radio cursor-pointer"
-                                             name="attendance"
-                                             type="radio"
-                                          />
-                                          <span className="text-sm">
-                                             Я с удовольствием приду
-                                          </span>
-                                       </label>
-                                    </motion.li>
-                                    <motion.li
-                                       initial={{ x: -40, opacity: 0 }}
-                                       whileInView={{ x: 0, opacity: 1 }}
-                                       transition={{
-                                          delay: 0.2,
-                                          ease: "easeOut",
-                                          duration: 0.5,
-                                       }}
-                                       className=""
-                                    >
-                                       <label className="flex items-center gap-4 cursor-pointer">
-                                          <input
-                                             className="radio cursor-pointer"
-                                             name="attendance"
-                                             type="radio"
-                                          />
-                                          <span className="text-sm">
-                                             Буду со своей парой
-                                          </span>
-                                       </label>
-                                    </motion.li>
-                                    <motion.li
-                                       initial={{ x: -40, opacity: 0 }}
-                                       whileInView={{ x: 0, opacity: 1 }}
-                                       transition={{
-                                          delay: 0.3,
-                                          ease: "easeOut",
-                                          duration: 0.5,
-                                       }}
-                                       className=""
-                                    >
-                                       <label className="flex items-center gap-4 cursor-pointer">
-                                          <input
-                                             className="radio cursor-pointer"
-                                             name="attendance"
-                                             type="radio"
-                                          />
-                                          <span className="text-sm">
-                                             К сожалению, не смогу
-                                             присутствовать
-                                          </span>
-                                       </label>
-                                    </motion.li>
-                                    <motion.li
-                                       initial={{ x: -40, opacity: 0 }}
-                                       whileInView={{ x: 0, opacity: 1 }}
-                                       transition={{
-                                          delay: 0.4,
-                                          ease: "easeOut",
-                                          duration: 0.5,
-                                       }}
-                                       className=""
-                                    >
-                                       <label className="flex items-center gap-4 cursor-pointer">
-                                          <input
-                                             className="radio cursor-pointer"
-                                             name="attendance"
-                                             type="radio"
-                                          />
-                                          <span className="text-sm">
-                                             Сообщу позже
-                                          </span>
-                                       </label>
-                                    </motion.li>
-                                 </ul>
-                              </div>
-                           </div>
-                           <div className="">
-                              <motion.div
-                                 initial={{ x: -40, opacity: 0 }}
-                                 whileInView={{ x: 0, opacity: 1 }}
-                                 transition={{
-                                    delay: 0,
-                                    ease: "easeOut",
-                                    duration: 0.5,
-                                 }}
-                                 className=""
-                              >
-                                 <h2 className="text-[18px] mb-2 mt-7">
-                                    Что предпочитаете из напитков?
-                                 </h2>
-                              </motion.div>
-                              <div className="">
-                                 <ul className="flex flex-col gap-1">
-                                    <motion.li
-                                       initial={{ x: -40, opacity: 0 }}
-                                       whileInView={{ x: 0, opacity: 1 }}
-                                       transition={{
-                                          delay: 0,
-                                          ease: "easeOut",
-                                          duration: 0.5,
-                                       }}
-                                       className=""
-                                    >
-                                       <label className="flex items-center gap-4 cursor-pointer">
-                                          <input
-                                             className="radio cursor-pointer"
-                                             name="drink"
-                                             type="radio"
-                                          />
-                                          <span className="text-sm">
-                                             Красное вино
-                                          </span>
-                                       </label>
-                                    </motion.li>
-                                    <motion.li
-                                       initial={{ x: -40, opacity: 0 }}
-                                       whileInView={{ x: 0, opacity: 1 }}
-                                       transition={{
-                                          delay: 0.1,
-                                          ease: "easeOut",
-                                          duration: 0.5,
-                                       }}
-                                       className=""
-                                    >
-                                       <label className="flex items-center gap-4 cursor-pointer">
-                                          <input
-                                             className="radio cursor-pointer"
-                                             name="drink"
-                                             type="radio"
-                                          />
-                                          <span className="text-sm">
-                                             Белое вино
-                                          </span>
-                                       </label>
-                                    </motion.li>
-                                    <motion.li
-                                       initial={{ x: -40, opacity: 0 }}
-                                       whileInView={{ x: 0, opacity: 1 }}
-                                       transition={{
-                                          delay: 0.2,
-                                          ease: "easeOut",
-                                          duration: 0.5,
-                                       }}
-                                       className=""
-                                    >
-                                       <label className="flex items-center gap-4 cursor-pointer">
-                                          <input
-                                             className="radio cursor-pointer"
-                                             name="drink"
-                                             type="radio"
-                                          />
-                                          <span className="text-sm">
-                                             Шампанское
-                                          </span>
-                                       </label>
-                                    </motion.li>
-                                    <motion.li
-                                       initial={{ x: -40, opacity: 0 }}
-                                       whileInView={{ x: 0, opacity: 1 }}
-                                       transition={{
-                                          delay: 0.3,
-                                          ease: "easeOut",
-                                          duration: 0.5,
-                                       }}
-                                       className=""
-                                    >
-                                       <label className="flex items-center gap-4 cursor-pointer">
-                                          <input
-                                             className="radio cursor-pointer"
-                                             name="drink"
-                                             type="radio"
-                                          />
-                                          <span className="text-sm">Водка</span>
-                                       </label>
-                                    </motion.li>
-                                    <motion.li
-                                       initial={{ x: -40, opacity: 0 }}
-                                       whileInView={{ x: 0, opacity: 1 }}
-                                       transition={{
-                                          delay: 0.4,
-                                          ease: "easeOut",
-                                          duration: 0.5,
-                                       }}
-                                       className=""
-                                    >
-                                       <label className="flex items-center gap-4 cursor-pointer">
-                                          <input
-                                             className="radio cursor-pointer"
-                                             name="drink"
-                                             type="radio"
-                                          />
-                                          <span className="text-sm">Виски</span>
-                                       </label>
-                                    </motion.li>
-                                    <motion.li
-                                       initial={{ x: -40, opacity: 0 }}
-                                       whileInView={{ x: 0, opacity: 1 }}
-                                       transition={{
-                                          delay: 0.5,
-                                          ease: "easeOut",
-                                          duration: 0.5,
-                                       }}
-                                       className=""
-                                    >
-                                       <label className="flex items-center gap-4 cursor-pointer">
-                                          <input
-                                             className="radio cursor-pointer"
-                                             name="drink"
-                                             type="radio"
-                                          />
-                                          <span className="text-sm">
-                                             Коньяк{" "}
-                                          </span>
-                                       </label>
-                                    </motion.li>
-                                    <motion.li
-                                       initial={{ x: -40, opacity: 0 }}
-                                       whileInView={{ x: 0, opacity: 1 }}
-                                       transition={{
-                                          delay: 0.6,
-                                          ease: "easeOut",
-                                          duration: 0.5,
-                                       }}
-                                       className=""
-                                    >
-                                       <label className="flex items-center gap-4 cursor-pointer">
-                                          <input
-                                             className="radio cursor-pointer"
-                                             name="drink"
-                                             type="radio"
-                                          />
-                                          <span className="text-sm">
-                                             Не пью алкоголь
-                                          </span>
-                                       </label>
-                                    </motion.li>
-                                 </ul>
-                              </div>
-                           </div>
-                           <div className="flex justify-center mt-7">
-                              <motion.button
-                                 initial={{ y: -40, opacity: 0 }}
-                                 whileInView={{ y: 0, opacity: 1 }}
-                                 transition={{
-                                    delay: 0,
-                                    ease: "easeOut",
-                                    duration: 0.5,
-                                 }}
-                                 className="w-[150px] h-[60px] rounded-full border border-black"
-                              >
-                                 Отправить
-                              </motion.button>
-                           </div>
-                        </form>
-                     </div>
+                     <Form />
                   </section>
 
                   <section>
@@ -931,18 +399,7 @@ export default function Home() {
                               Жених:
                               <a href="tel:998(00)000-0000"> 998(00)000-0000</a>
                            </motion.p>
-                           <motion.img
-                              initial={{ scale: 0.9, opacity: 0 }}
-                              whileInView={{ scale: 1, opacity: 1 }}
-                              transition={{
-                                 delay: 0,
-                                 ease: "easeOut",
-                                 duration: 1,
-                              }}
-                              className="w-9 mt-4"
-                              src="https://thumb.tildacdn.com/tild6638-6436-4431-a339-653032343035/-/resize/36x/-/format/webp/photo.png"
-                              alt="tel"
-                           />
+
                            <motion.p
                               initial={{ scale: 0.9, opacity: 0 }}
                               whileInView={{ scale: 1, opacity: 1 }}
@@ -956,18 +413,6 @@ export default function Home() {
                               Невеста:
                               <a href="tel:998(00)000-0000"> 998(00)000-0000</a>
                            </motion.p>
-                           <motion.img
-                              initial={{ scale: 0.9, opacity: 0 }}
-                              whileInView={{ scale: 1, opacity: 1 }}
-                              transition={{
-                                 delay: 0,
-                                 ease: "easeOut",
-                                 duration: 1,
-                              }}
-                              className="w-9 mt-4"
-                              src="https://thumb.tildacdn.com/tild6638-6436-4431-a339-653032343035/-/resize/36x/-/format/webp/photo.png"
-                              alt="tel"
-                           />
                         </div>
 
                         <div className="flex flex-col items-center">
@@ -1000,7 +445,9 @@ export default function Home() {
                               }}
                            >
                               Shakhzod
-                              <br /> & <br /> Sabina
+                              <br />
+                              <span className="font-[Jony]">&</span>
+                              <br /> Sabina
                            </motion.h2>
                         </div>
                      </div>

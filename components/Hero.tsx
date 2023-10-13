@@ -8,7 +8,7 @@ interface HeroProps {}
 
 const Hero: React.FC<HeroProps> = () => {
    return (
-      <div className="custom-container py-20 max-sm:py-10 px-16">
+      <div className="custom-container py-10 max-sm:py-0 px-16">
          <div className="flex gap-5 justify-center">
             <motion.div
                initial={{ x: -50, opacity: 0 }}
@@ -30,9 +30,10 @@ const Hero: React.FC<HeroProps> = () => {
                initial={{ x: 50, opacity: 0 }}
                whileInView={{ x: 0, opacity: 1 }}
                transition={{ delay: 0, ease: "easeOut", duration: 1.5 }}
-               className="max-w-[250px] w-full"
+               className="max-w-[250px] w-full min-h-[200px]"
             >
                <Image
+                  className="min-h-[200px] w-full"
                   src={"/images/love-history.jpg"}
                   width={1000}
                   height={1000}

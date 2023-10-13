@@ -1,6 +1,8 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 
+import { GiBigDiamondRing } from "react-icons/gi";
+
 interface CalendarProps {}
 
 const Calendar: React.FC<CalendarProps> = () => {
@@ -35,7 +37,6 @@ const Calendar: React.FC<CalendarProps> = () => {
                   Ноябрь
                </motion.h2>
             </div>
-
             <div className="px-10 mt-5">
                <ul className="flex items-center justify-between"></ul>
                <ul className="grid grid-cols-7 gap-2 mt-5">
@@ -68,13 +69,18 @@ const Calendar: React.FC<CalendarProps> = () => {
                            className="text-base text-center relative"
                         >
                            {idx === 10 ? (
-                              <Image
-                                 className="w-7 h-7 absolute -top-[5px] left-[2.4px]"
-                                 src={"/images/ring.png"}
-                                 width={1000}
-                                 height={1000}
-                                 alt="ring"
-                              />
+                              <motion.div
+                                 initial={{ opacity: 0 }}
+                                 whileInView={{ opacity: 1 }}
+                                 transition={{
+                                    delay: 1.7,
+                                    ease: "easeOut",
+                                    duration: 1,
+                                 }}
+                                 className="w-[38px] h-[38px] absolute -top-[10px] -left-[2.7px]"
+                              >
+                                 <GiBigDiamondRing className="w-full h-full" />
+                              </motion.div>
                            ) : null}
                            {item + 1}
                         </motion.li>

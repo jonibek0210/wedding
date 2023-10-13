@@ -53,9 +53,9 @@ const Counter: React.FC<CounterProps> = () => {
             >
                ЖДЕМ ВАС
             </motion.h2>
-            <div className="absolute top-4 -right-20">
+            <div className="absolute top-5 -right-2">
                <p className="text-8xl font-[champignon] font-normal leading-[.8] text-center text-gray-500">
-                  через...
+                  через<span className="font-[Jony]">...</span>
                </p>
             </div>
          </div>
