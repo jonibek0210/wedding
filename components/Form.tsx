@@ -5,6 +5,8 @@ import { motion } from "framer-motion";
 
 import { RiArrowDownDoubleFill } from "react-icons/ri";
 import { TiArrowUp } from "react-icons/ti";
+import { GoPaperAirplane } from "react-icons/go";
+import ButtonSend from "./children/ButtonSend";
 
 interface FormProps {}
 
@@ -65,13 +67,16 @@ const Form: React.FC<FormProps> = () => {
       },
    ];
 
+   const [active, setActive] = useState<boolean>(false);
+
    const {
       register,
       handleSubmit,
       formState: { errors },
    } = useForm<Inputs>();
 
-   const onSubmit: SubmitHandler<Inputs> = (data) => {
+   const onSubmit: SubmitHandler<Inputs> = (data: any) => {
+      setActive(data ? true : false);
       axios
          .post(
             "https://sheet.best/api/sheets/9b0d2b05-7007-42b3-a5a8-d1b8db75e3fd",
@@ -247,18 +252,7 @@ const Form: React.FC<FormProps> = () => {
                </div>
             </div>
             <div className="flex justify-center mt-7">
-               <motion.button
-                  initial={{ y: -40, opacity: 0 }}
-                  whileInView={{ y: 0, opacity: 1 }}
-                  transition={{
-                     delay: 0,
-                     ease: "easeOut",
-                     duration: 0.5,
-                  }}
-                  className="w-[150px] h-[60px] rounded-full border border-black"
-               >
-                  Отправить
-               </motion.button>
+               <ButtonSend active={active} setActive={setActive} />
             </div>
          </form>
       </div>

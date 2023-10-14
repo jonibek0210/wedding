@@ -17,10 +17,10 @@ const Hero: React.FC<HeroProps> = () => {
                className="mt-5"
             >
                <p className="text-[45px] leading-10 font-[Jony] font-semibold">
-                  23
+                  11
                </p>
                <p className="text-[45px] leading-10 font-[Jony] font-semibold">
-                  10
+                  11
                </p>
                <p className="text-[45px] leading-10 font-[Jony] font-semibold">
                   23

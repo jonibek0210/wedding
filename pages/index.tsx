@@ -17,6 +17,7 @@ import { AiOutlineHeart } from "react-icons/ai";
 import { Inter } from "next/font/google";
 import PlanDay from "@/components/PlanDay";
 import Form from "@/components/Form";
+import Link from "next/link";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
@@ -40,14 +41,14 @@ export default function Home() {
          ) : (
             <>
                <Header />
-               <main>
+               <main className="overflow-hidden">
                   <section>
                      <Hero />
                   </section>
 
                   <section>
                      <div className="custom-container px-5 overflow-hidden">
-                        <div className="mt-10">
+                        <div className="mt-28">
                            <motion.h2
                               initial={{ scale: 0.9, opacity: 0 }}
                               whileInView={{ scale: 1, opacity: 1 }}
@@ -173,25 +174,29 @@ export default function Home() {
                               ул. Неверовского, 15, Москва
                            </motion.a>
                         </div>
-                        <div className="flex justify-center mt-8">
-                           <motion.button
-                              initial={{ scale: 0.9, opacity: 0 }}
-                              whileInView={{ scale: 1, opacity: 1 }}
-                              transition={{
-                                 delay: 0,
-                                 ease: "easeOut",
-                                 duration: 1,
-                              }}
-                              className="h-10 px-5 flex items-center gap-2 border border-black rounded-full"
+                        <motion.div
+                           initial={{ scale: 0.9, opacity: 0 }}
+                           whileInView={{ scale: 1, opacity: 1 }}
+                           transition={{
+                              delay: 0,
+                              ease: "easeOut",
+                              duration: 1,
+                           }}
+                           className="flex justify-center mt-8"
+                        >
+                           <Link
+                              href={"#"}
+                              className="relative max-w-[260px] w-full h-10 px-5 flex items-center gap-2 border border-black rounded-full"
                            >
                               Посмотреть на карте
                               <img
+                                 className="animate-arrow absolute"
                                  width={"50px"}
                                  src="https://thumb.tildacdn.com/tild3864-3934-4431-b462-616565636365/-/resize/100x/-/format/webp/photo.png"
                                  alt="arrow"
                               />
-                           </motion.button>
-                        </div>
+                           </Link>
+                        </motion.div>
                      </div>
                   </section>
 

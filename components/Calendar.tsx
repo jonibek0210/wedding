@@ -77,7 +77,7 @@ const Calendar: React.FC<CalendarProps> = () => {
                                     ease: "easeOut",
                                     duration: 1,
                                  }}
-                                 className="w-[38px] h-[38px] absolute -top-[10px] -left-[2.7px]"
+                                 className="animate-ring w-[38px] h-[38px] absolute -top-[10px] -left-[2.8px]"
                               >
                                  <GiBigDiamondRing className="w-full h-full" />
                               </motion.div>
