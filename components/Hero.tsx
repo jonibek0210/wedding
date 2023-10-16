@@ -33,8 +33,8 @@ const Hero: React.FC<HeroProps> = () => {
                className="max-w-[250px] w-full min-h-[300px]"
             >
                <Image
-                  className="min-h-[300px] w-full"
-                  src={"/images/love-history.jpg"}
+                  className="min-h-[300px] w-full object-cover"
+                  src={"/images/photo.jpg"}
                   width={1000}
                   height={1000}
                   alt="photo"

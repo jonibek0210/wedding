@@ -103,7 +103,7 @@ export default function Home() {
                               }}
                               className="text-center mt-5"
                            >
-                              11 2023 года
+                              11 11 2023 года
                            </motion.p>
                         </div>
                         <motion.div
@@ -114,11 +114,11 @@ export default function Home() {
                               ease: "easeOut",
                               duration: 1.5,
                            }}
-                           className="flex justify-center"
+                           className="relative flex justify-center"
                         >
                            <Image
-                              className="max-w-[247px] w-full"
-                              src={"/images/photo-2.jpg"}
+                              className="max-w-[247px] min-h-[300px] w-full object-cover"
+                              src={"/images/photo-3.jpg"}
                               width={1000}
                               height={1000}
                               alt="photo"
@@ -185,7 +185,7 @@ export default function Home() {
                            className="flex justify-center mt-8"
                         >
                            <Link
-                              href={"#"}
+                              href={"https://yandex.uz/maps/-/CDaNeJ~n"}
                               className="relative max-w-[260px] w-full h-10 px-5 flex items-center gap-2 border border-black rounded-full"
                            >
                               Посмотреть на карте
@@ -326,26 +326,7 @@ export default function Home() {
                         <div className="flex justify-center mt-5">
                            <AiOutlineHeart size={40} color={"gray"} />
                         </div>
-                        <div className="flex justify-center mt-5">
-                           <motion.p
-                              initial={{ scale: 0.8, opacity: 0 }}
-                              whileInView={{ scale: 1, opacity: 1 }}
-                              transition={{
-                                 delay: 0,
-                                 ease: "easeOut",
-                                 duration: 1,
-                              }}
-                              className="text-[20px] leading-[31px] text-center"
-                           >
-                              Просим вас не дарить нам цветы - мы не успеем
-                              насладиться их красотой до отъезда. А вот
-                              бутылочке вина для нашей семейной винотеки будем
-                              очень рады!
-                           </motion.p>
-                        </div>
-                        <div className="flex justify-center mt-5">
-                           <AiOutlineHeart size={40} color={"gray"} />
-                        </div>
+
                         <div className="flex justify-center mt-5">
                            <div className="max-w-[320px] w-full">
                               <motion.p

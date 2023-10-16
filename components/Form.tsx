@@ -24,15 +24,7 @@ const Form: React.FC<FormProps> = () => {
       },
       {
          id: 1,
-         attendance: "Буду со своей парой",
-      },
-      {
-         id: 2,
          attendance: "К сожалению, не смогу присутствовать",
-      },
-      {
-         id: 3,
-         attendance: "Сообщу позже",
       },
    ];
 
