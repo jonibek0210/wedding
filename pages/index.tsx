@@ -158,10 +158,9 @@ export default function Home() {
                               }}
                               className="text-[18px] text-center"
                            >
-                              Triumph Event Hall
+                              Ресторан DIYORA
                            </motion.p>
-                           <motion.a
-                              href="#"
+                           <motion.p
                               initial={{ scale: 0.9, opacity: 0 }}
                               whileInView={{ scale: 1, opacity: 1 }}
                               transition={{
@@ -171,8 +170,8 @@ export default function Home() {
                               }}
                               className="block mt-5 text-center"
                            >
-                              ул. Неверовского, 15, Москва
-                           </motion.a>
+                              Ул. Ислама Каримова
+                           </motion.p>
                         </div>
                         <motion.div
                            initial={{ scale: 0.9, opacity: 0 }}
@@ -383,7 +382,7 @@ export default function Home() {
                               className="text-[20px] text-center"
                            >
                               Жених:
-                              <a href="tel:998(00)000-0000"> 998(00)000-0000</a>
+                              <a href="tel:998(91)536-7667"> 998(91)536-7667</a>
                            </motion.p>
 
                            <motion.p
@@ -397,7 +396,7 @@ export default function Home() {
                               className="text-[20px] text-center mt-5"
                            >
                               Невеста:
-                              <a href="tel:998(00)000-0000"> 998(00)000-0000</a>
+                              <a href="tel:998(90)468-4888"> 998(90)468-4888</a>
                            </motion.p>
                         </div>
 
