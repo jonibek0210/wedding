@@ -40,21 +40,19 @@ const Calendar: React.FC<CalendarProps> = () => {
             <div className="px-10 mt-5">
                <ul className="flex items-center justify-between"></ul>
                <ul className="grid grid-cols-7 gap-2 mt-5">
-                  <li className="text-xl">ПН</li>
-                  <li className="text-xl">ВТ</li>
-                  <li className="text-xl">СР</li>
-                  <li className="text-xl">ЧТ</li>
-                  <li className="text-xl">ПТ</li>
-                  <li className="text-xl">СБ</li>
-                  <li className="text-xl">ВС</li>
+                  <li className="text-xl text-center">ПН</li>
+                  <li className="text-xl text-center">ВТ</li>
+                  <li className="text-xl text-center">СР</li>
+                  <li className="text-xl text-center">ЧТ</li>
+                  <li className="text-xl text-center">ПТ</li>
+                  <li className="text-xl text-center">СБ</li>
+                  <li className="text-xl text-center">ВС</li>
                   <li></li>
                   <li></li>
                   {[
                      0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16,
                      17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29,
                   ].map((item: number, idx: number) => {
-                     console.log();
-
                      return (
                         <motion.li
                            initial={{ y: 40, opacity: 0 }}
@@ -76,7 +74,7 @@ const Calendar: React.FC<CalendarProps> = () => {
                                     ease: "easeOut",
                                     duration: 1,
                                  }}
-                                 className="animate-ring w-[38px] h-[38px] absolute -top-[10px] -left-[2.8px]"
+                                 className="animate-ring w-[38px] h-[38px] absolute -top-[10px] -left-[2.6px]"
                               >
                                  <GiBigDiamondRing className="w-full h-full" />
                               </motion.div>

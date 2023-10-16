@@ -27,7 +27,15 @@ const Animate: React.FC<AnimateProps> = ({ hide, setHide }) => {
             hide ? "block" : "hidden"
          } fixed top-0 left-0 z-[99] w-screen h-full duration-[3s] ease-out bg-white`}
       >
-         <motion.svg
+         <div className="fixed z-[100] top-1/2 left-1/2 -translate-y-1/2 -translate-x-[50%] duration-[3s] ease-out">
+            <img
+               className="w-full"
+               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4yt8_itrnBvaaz6-OtA4QAB7urfZLDCoVMA&usqp=CAU"
+               alt="rings"
+            />
+         </div>
+
+         {/* <motion.svg
             className={`${
                hide ? "block" : "hidden"
             } animate w-full h-full fixed z-[100] top-1/2 left-1/2 -translate-y-1/2 -translate-x-[50.5%] duration-[3s] ease-out`}
@@ -43,7 +51,7 @@ const Animate: React.FC<AnimateProps> = ({ hide, setHide }) => {
                strokeWidth="3"
                strokeLinecap="round"
             />
-         </motion.svg>
+         </motion.svg> */}
       </motion.div>
    );
 };

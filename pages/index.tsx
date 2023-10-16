@@ -8,7 +8,7 @@ import Hero from "@/components/Hero";
 import Calendar from "@/components/Calendar";
 import Counter from "@/components/Counter";
 import Footer from "@/components/Footer";
-import Animate from "@/components/Animate";
+import Animate from "@/components/Loader";
 
 import { motion } from "framer-motion";
 
