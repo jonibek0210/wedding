@@ -8,31 +8,25 @@ interface AnimateProps {
 }
 
 const Animate: React.FC<AnimateProps> = ({ hide, setHide }) => {
-   useEffect(() => {
-      setTimeout(() => {
-         setHide(false);
-      }, 5000);
-   }, []);
+   // useEffect(() => {
+   //    setTimeout(() => {
+   //       setHide(false);
+   //    }, 5000);
+   // }, []);
 
    return (
       <motion.div
          initial={{ opacity: 1 }}
          whileInView={{ opacity: 0 }}
          transition={{
-            delay: 3,
+            delay: 1,
             ease: "easeOut",
-            duration: 2,
+            duration: 1,
          }}
-         className={`${
-            hide ? "block" : "hidden"
-         } fixed top-0 left-0 z-[99] w-screen h-full duration-[3s] ease-out bg-white`}
+         className={`fixed top-0 left-0 z-[99] w-screen h-full duration-[3s] ease-out bg-white`}
       >
          <div className="fixed z-[100] top-1/2 left-1/2 -translate-y-1/2 -translate-x-[50%] duration-[3s] ease-out">
-            <img
-               className="w-full"
-               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4yt8_itrnBvaaz6-OtA4QAB7urfZLDCoVMA&usqp=CAU"
-               alt="rings"
-            />
+            <img className="w-full" src="/images/rings.png" alt="rings" />
          </div>
 
          {/* <motion.svg

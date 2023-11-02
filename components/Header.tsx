@@ -1,12 +1,11 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 import { IoVolumeHigh, IoVolumeMute } from "react-icons/io5";
 
 interface HeaderProps {}
 
 const Header: React.FC<HeaderProps> = () => {
-   const [active, setActive] = useState(false);
-
+   const [active, setActive] = useState(true);
    useEffect(() => {
       const audio = document.querySelector("audio");
       if (active) {
@@ -31,7 +30,7 @@ const Header: React.FC<HeaderProps> = () => {
                   <IoVolumeMute size={30} color={"#00000030"} />
                )}
             </button>
-            <audio loop autoPlay src="/music/love.mp3"></audio>
+            <audio loop autoPlay={true} src="/music/love.mp3"></audio>
          </div>
       </header>
    );

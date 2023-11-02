@@ -2,6 +2,11 @@
 /* eslint-disable @next/next/no-img-element */
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
+
+import { motion } from "framer-motion";
+
+import { AiOutlineHeart } from "react-icons/ai";
 
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
@@ -9,15 +14,11 @@ import Calendar from "@/components/Calendar";
 import Counter from "@/components/Counter";
 import Footer from "@/components/Footer";
 import Animate from "@/components/Loader";
-
-import { motion } from "framer-motion";
-
-import { AiOutlineHeart } from "react-icons/ai";
-
-import { Inter } from "next/font/google";
 import PlanDay from "@/components/PlanDay";
 import Form from "@/components/Form";
-import Link from "next/link";
+
+import { Inter } from "next/font/google";
+import Head from "next/head";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
@@ -29,7 +30,7 @@ export default function Home() {
       });
       const timeout = setTimeout(() => {
          setHide(false);
-      }, 5000);
+      }, 2000);
 
       return () => clearTimeout(timeout);
    }, []);
@@ -40,6 +41,14 @@ export default function Home() {
             <Animate setHide={setHide} hide={hide} />
          ) : (
             <>
+               <Head>
+                  <title>Shakhzod & Sabina</title>
+                  <link
+                     rel="icon"
+                     type="image/x-icon"
+                     href="/images/rings.png"
+                  ></link>
+               </Head>
                <Header />
                <main className="overflow-hidden">
                   <section>
@@ -249,7 +258,7 @@ export default function Home() {
                                  ease: "easeOut",
                                  duration: 1,
                               }}
-                              className="w-12 h-12 rounded-full bg-[#000000]"
+                              className="w-12 h-12 rounded-full bg-gradient-to-br from-[#434343] to-[#000000] from-[20%]"
                            ></motion.div>
                            <motion.div
                               initial={{ opacity: 0 }}
@@ -259,7 +268,7 @@ export default function Home() {
                                  ease: "easeOut",
                                  duration: 1,
                               }}
-                              className="w-12 h-12 rounded-full bg-[#9e9e9e]"
+                              className="w-12 h-12 rounded-full bg-gradient-to-br to-[#3498db] from-[#2c3e50]"
                            ></motion.div>
                            <motion.div
                               initial={{ opacity: 0 }}
@@ -269,7 +278,7 @@ export default function Home() {
                                  ease: "easeOut",
                                  duration: 1,
                               }}
-                              className="w-12 h-12 rounded-full bg-[#ececec]"
+                              className="w-12 h-12 rounded-full bg-gradient-to-br to-[#237A57] from-[#093028]"
                            ></motion.div>
                            <motion.div
                               initial={{ opacity: 0 }}
@@ -279,7 +288,7 @@ export default function Home() {
                                  ease: "easeOut",
                                  duration: 1,
                               }}
-                              className="w-12 h-12 rounded-full bg-[#f0dfe6]"
+                              className="w-12 h-12 rounded-full bg-gradient-to-br to-[#ffdde1] from-[#ee9ca7]"
                            ></motion.div>
                            <motion.div
                               initial={{ opacity: 0 }}
@@ -289,7 +298,7 @@ export default function Home() {
                                  ease: "easeOut",
                                  duration: 1,
                               }}
-                              className="w-12 h-12 rounded-full bg-[#d5e2eb]"
+                              className="w-12 h-12 rounded-full bg-gradient-to-br to-[#E9E4F0] from-[#D3CCE3]"
                            ></motion.div>
                         </div>
                         <div className="">

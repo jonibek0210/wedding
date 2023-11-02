@@ -43,6 +43,11 @@ header {
    animation: arrow 3s infinite forwards;
 }
 
+.last:nth-child(5) .rounded-full {
+   aspect-ratio: 2/2;
+   scale: 0.8;
+}
+
 @keyframes arrow {
    0% {
       right: 15px;

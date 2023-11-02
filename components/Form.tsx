@@ -7,6 +7,7 @@ import { RiArrowDownDoubleFill } from "react-icons/ri";
 import { TiArrowUp } from "react-icons/ti";
 import { GoPaperAirplane } from "react-icons/go";
 import ButtonSend from "./children/ButtonSend";
+import moment from "moment";
 
 interface FormProps {}
 
@@ -14,6 +15,7 @@ type Inputs = {
    guest: string;
    attendance: string;
    drink: string;
+   date: string;
 };
 
 const Form: React.FC<FormProps> = () => {
@@ -27,7 +29,6 @@ const Form: React.FC<FormProps> = () => {
          attendance: "К сожалению, не смогу присутствовать",
       },
    ];
-
    const drinks = [
       {
          id: 0,
@@ -58,7 +59,6 @@ const Form: React.FC<FormProps> = () => {
          drink: "Не пью алкоголь",
       },
    ];
-
    const [active, setActive] = useState<boolean>(false);
 
    const {
@@ -67,12 +67,24 @@ const Form: React.FC<FormProps> = () => {
       formState: { errors },
    } = useForm<Inputs>();
 
+   // const year: any = new Date().getFullYear().toString();
+   // const month: any = new Date().getMonth().toString();
+   // const day: any = new Date().getDay().toString();
+   // const hours: any = new Date().getHours().toString();
+   // const minutes: any = new Date().getMinutes().toString();
+
    const onSubmit: SubmitHandler<Inputs> = (data: any) => {
       setActive(data ? true : false);
+      const dateTime = moment().format("YY.MM.DD-HH:mm");
+      console.log({
+         ...data,
+         date: dateTime,
+      });
+
       axios
          .post(
             "https://sheet.best/api/sheets/9b0d2b05-7007-42b3-a5a8-d1b8db75e3fd",
-            data,
+            { ...data, date: dateTime },
             {
                headers: {
                   "Content-Type": "application/json",
@@ -152,7 +164,7 @@ const Form: React.FC<FormProps> = () => {
                   </h2>
                </motion.div>
                <div className="relative">
-                  <ul className="flex flex-col gap-1">
+                  <ul className="flex flex-col gap-2">
                      {attendance.map(
                         (item: { id: number; attendance: string }) => {
                            return (
@@ -209,7 +221,7 @@ const Form: React.FC<FormProps> = () => {
                   </h2>
                </motion.div>
                <div className="relative">
-                  <ul className="flex flex-col gap-1">
+                  <ul className="flex flex-col gap-2">
                      {drinks.map((item: { id: number; drink: string }) => {
                         return (
                            <motion.li
