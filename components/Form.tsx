@@ -22,7 +22,7 @@ const Form: React.FC<FormProps> = () => {
    const {
       register,
       handleSubmit,
-      formState: { errors },
+      formState: { errors, isSubmitting, isDirty, isValid },
       reset,
    } = useForm<Inputs>();
 
@@ -71,8 +71,9 @@ const Form: React.FC<FormProps> = () => {
    const [isSubmitSuccessful, setIsSubmitSuccessful] = useState(false);
 
    const onSubmit: SubmitHandler<Inputs> = (data: any) => {
-      setActive(data ? true : false);
+      setActive(true);
       const dateTime = moment().format("YY.MM.DD-HH:mm");
+      setIsSubmitSuccessful(!isSubmitSuccessful);
 
       axios
          .post(
@@ -87,7 +88,6 @@ const Form: React.FC<FormProps> = () => {
          .then((res) => {
             if (res.status === 200 || res.status === 201) {
                console.log(res.data);
-               setIsSubmitSuccessful(!isSubmitSuccessful);
             }
          })
          .catch((err) => {

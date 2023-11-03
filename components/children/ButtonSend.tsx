@@ -9,10 +9,13 @@ const ButtonSend: React.FC<ButtonSendProps> = ({ active, setActive }) => {
    return (
       <div className="wrapper-no4">
          <button
+            disabled={active}
             onClick={() => setActive(active)}
             className={active ? "button-bird active" : "button-bird"}
          >
-            <p className="button-bird__text">{active ? "DONE" : "SEND"}</p>
+            <p className="button-bird__text">
+               {active ? "ОТПРАВЛЕНО" : "ОТПРАВИТЬ"}
+            </p>
             <svg
                version="1.1"
                className="feather"
