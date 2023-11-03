@@ -19,6 +19,13 @@ type Inputs = {
 };
 
 const Form: React.FC<FormProps> = () => {
+   const {
+      register,
+      handleSubmit,
+      formState: { errors },
+      reset,
+   } = useForm<Inputs>();
+
    const attendance = [
       {
          id: 0,
@@ -59,27 +66,13 @@ const Form: React.FC<FormProps> = () => {
          drink: "Не пью алкоголь",
       },
    ];
+
    const [active, setActive] = useState<boolean>(false);
-
-   const {
-      register,
-      handleSubmit,
-      formState: { errors },
-   } = useForm<Inputs>();
-
-   // const year: any = new Date().getFullYear().toString();
-   // const month: any = new Date().getMonth().toString();
-   // const day: any = new Date().getDay().toString();
-   // const hours: any = new Date().getHours().toString();
-   // const minutes: any = new Date().getMinutes().toString();
+   const [isSubmitSuccessful, setIsSubmitSuccessful] = useState(false);
 
    const onSubmit: SubmitHandler<Inputs> = (data: any) => {
       setActive(data ? true : false);
       const dateTime = moment().format("YY.MM.DD-HH:mm");
-      console.log({
-         ...data,
-         date: dateTime,
-      });
 
       axios
          .post(
@@ -94,12 +87,21 @@ const Form: React.FC<FormProps> = () => {
          .then((res) => {
             if (res.status === 200 || res.status === 201) {
                console.log(res.data);
+               setIsSubmitSuccessful(!isSubmitSuccessful);
             }
          })
          .catch((err) => {
             console.log(err);
          });
    };
+
+   useEffect(() => {
+      reset({
+         guest: "",
+         drink: "",
+         attendance: "",
+      });
+   }, [isSubmitSuccessful]);
 
    return (
       <div className="custom-container px-10">
